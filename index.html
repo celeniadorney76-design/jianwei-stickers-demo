@@ -1,33 +1,20 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b1725">
-<title>Jianwei Stickers · 单图实验</title>
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1725"><title>Jianwei Stickers · 手机零安装实验</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#0b1725;color:#f0f6fc;font:16px/1.6 system-ui,-apple-system,sans-serif}
-main{max-width:580px;margin:auto;padding:32px 20px}h1{font-size:1.7rem;line-height:1.35}p{color:#c2cedb}
-.card{background:#182a3c;border:1px solid #365066;border-radius:20px;padding:28px;text-align:center}
-.card img{width:min(100%,230px);height:auto;border-radius:14px;image-rendering:auto}
-.id{color:#a1e7d5;font-weight:700}button{background:#35887a;border:0;border-radius:12px;padding:12px 18px;color:#fff;font-size:1rem;font-weight:600;cursor:pointer}
-.url{overflow-wrap:anywhere;font-size:.88rem;color:#a9cce0}.note{font-size:.88rem}
-</style>
-</head>
-<body><main>
-<h1>🐉 见微表情库 · 测试 0.1</h1>
-<p>单张演示表情，用来验证 GitHub Pages 图片地址是否能被 ChatGPT 安卓 App 调用并展示。这不是正式插件。</p>
-<div class="card"><img src="./stickers/jw_happy.png" alt="见微开心演示表情"><p class="id">JW_HAPPY</p></div>
-<h2>公开图片地址</h2>
-<p class="url" id="imgurl"></p>
-<button id="copy">复制图片直链</button>
-<p class="note">目前采用压缩缩略图用于技术测试。网页能显示图片，不代表 ChatGPT 已能主动把它作为表情发送。</p>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0b1725;color:#edf7fc;font:16px/1.6 system-ui,-apple-system,sans-serif}main{max-width:690px;margin:auto;padding:26px 18px 60px}h1{font-size:1.65rem;margin:0 0 14px}h2{font-size:1.2rem;margin-top:28px}p,li{color:#cbdce8}.card{background:#192f42;border:1px solid #3c586a;border-radius:18px;padding:22px;margin:16px 0}.demo{text-align:center}.demo img{width:140px;height:140px;object-fit:contain;background:#f4f6f8;border-radius:12px}button{font:600 1rem system-ui;border:0;border-radius:13px;padding:14px 18px;background:#31a89b;color:#062622;cursor:pointer;width:100%}button:active{opacity:.85}.quiet{font-size:.88rem;color:#b6cbd6}.tag{color:#7fddca}a{color:#9ad5fd}code{overflow-wrap:anywhere;color:#a5e5d7}.mock{border-radius:12px;background:#0e2030;padding:15px}.mock [data-message-author-role]{padding:0 4px}details{border-top:1px solid #3c586a;margin-top:16px;padding-top:12px}.copybox{font-size:11px;max-height:100px;overflow:auto;background:#06131d;border-radius:10px;padding:12px;overflow-wrap:anywhere;user-select:all}
+</style></head><body><main>
+<h1>🐉 Jianwei Stickers</h1>
+<p>手机端单张表情技术实验。<strong>无需额外 App 或 API Key</strong>，用浏览器的书签脚本在 ChatGPT 网页版把 <code>[JW_HAPPY]</code> 显示成图片。</p>
+<div class="card demo"><img src="./stickers/jw_happy.png" alt="见微开心演示表情"><p class="tag"><strong>JW_HAPPY</strong> · 演示图</p><p class="quiet">图片资源：公开演示缩略图；私人表情包不在仓库中。</p></div>
+<div class="card"><h2>先在本页测试渲染</h2><p>下面模拟一条助手消息，点按钮后应该出现图片。</p><div class="mock"><div data-message-author-role="assistant">测试成功！ [JW_HAPPY]</div></div><p></p><button id="demo">运行本页表情脚本</button></div>
+<h2>在 Android Chrome 上使用</h2>
+<ol><li>点下方按钮，复制书签代码。</li><li>在 Chrome 中将<strong>本页添加到书签</strong>，然后打开书签管理并<strong>编辑书签</strong>：名称改为「见微表情」，网址替换成刚复制的整段代码，保存。</li><li>在 <a href="https://chatgpt.com/">chatgpt.com</a> 网页登录你的 Plus 账号。</li><li>点<strong>地址栏</strong>，输入「见微表情」，<strong>点击带书签图标的联想项</strong>（不要直接按搜索键）。</li><li>如果右下角出现“见微表情测试已启动”，让助手输出 <code>[JW_HAPPY]</code> 做实验。</li></ol>
+<div class="card"><button id="copy">复制书签脚本</button><p class="quiet" id="status">这是书签脚本，并不是安装浏览器扩展。刷新 ChatGPT 页面后可能需要重新运行。</p><details><summary>复制失败？展开这里长按复制</summary><div class="copybox" id="code">加载中…</div></details></div>
+<h2>本实验的边界</h2><p>只修改当前浏览器看到的助手回复，不修改 ChatGPT 服务器保存的文字。脚本只查找助手消息中的 <code>[JW_HAPPY]</code>；不会把对话发到我们的服务器。浏览器加载图片时会向 GitHub Pages 请求公开演示图。</p><p class="quiet">这是 Chrome Android 书签脚本可行性实验；不同手机浏览器和 ChatGPT 页面版本可能不兼容。不能直接在 ChatGPT 官方 Android App 中执行。</p>
+<script src="./bookmarklet.js"></script>
 <script>
-const imgUrl=new URL("./stickers/jw_happy.png", location.href).href;
-document.getElementById("imgurl").textContent=imgUrl;
-document.getElementById("copy").addEventListener("click",async()=>{
- try{await navigator.clipboard.writeText(imgUrl);document.getElementById("copy").textContent="已复制";}
- catch(e){document.getElementById("copy").textContent="复制失败，请长按地址";}
-});
-</script>
-</main></body></html>
+let bookmarklet="";
+fetch("./bookmarklet.txt").then(r=>r.text()).then(t=>{bookmarklet=t.trim();document.getElementById("code").textContent=bookmarklet}).catch(()=>document.getElementById("code").textContent="获取失败");
+document.getElementById("copy").onclick=async()=>{try{await navigator.clipboard.writeText(bookmarklet);document.getElementById("status").textContent="已复制！请编辑 Chrome 书签的网址。"}catch(e){document.getElementById("status").textContent="无法自动复制，展开下面代码手动复制。"}};
+document.getElementById("demo").onclick=()=>{if(window.__JW_STICKERS_V01__){document.getElementById("demo").textContent="脚本已在运行";return}document.getElementById("demo").textContent="测试中…";/* bookmarklet.js already executes on page load; this will show status */};
+</script></main></body></html>
