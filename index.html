@@ -11,10 +11,10 @@
 <ol><li>点下方按钮，复制书签代码。</li><li>在 Chrome 中将<strong>本页添加到书签</strong>，然后打开书签管理并<strong>编辑书签</strong>：名称改为「见微表情」，网址替换成刚复制的整段代码，保存。</li><li>在 <a href="https://chatgpt.com/">chatgpt.com</a> 网页登录你的 Plus 账号。</li><li>点<strong>地址栏</strong>，输入「见微表情」，<strong>点击带书签图标的联想项</strong>（不要直接按搜索键）。</li><li>如果右下角出现“见微表情测试已启动”，让助手输出 <code>[JW_HAPPY]</code> 做实验。</li></ol>
 <div class="card"><button id="copy">复制书签脚本</button><p class="quiet" id="status">这是书签脚本，并不是安装浏览器扩展。刷新 ChatGPT 页面后可能需要重新运行。</p><details><summary>复制失败？展开这里长按复制</summary><div class="copybox" id="code">加载中…</div></details></div>
 <h2>本实验的边界</h2><p>只修改当前浏览器看到的助手回复，不修改 ChatGPT 服务器保存的文字。脚本只查找助手消息中的 <code>[JW_HAPPY]</code>；不会把对话发到我们的服务器。浏览器加载图片时会向 GitHub Pages 请求公开演示图。</p><p class="quiet">这是 Chrome Android 书签脚本可行性实验；不同手机浏览器和 ChatGPT 页面版本可能不兼容。不能直接在 ChatGPT 官方 Android App 中执行。</p>
-<script src="./bookmarklet.js"></script>
+
 <script>
 let bookmarklet="";
 fetch("./bookmarklet.txt").then(r=>r.text()).then(t=>{bookmarklet=t.trim();document.getElementById("code").textContent=bookmarklet}).catch(()=>document.getElementById("code").textContent="获取失败");
 document.getElementById("copy").onclick=async()=>{try{await navigator.clipboard.writeText(bookmarklet);document.getElementById("status").textContent="已复制！请编辑 Chrome 书签的网址。"}catch(e){document.getElementById("status").textContent="无法自动复制，展开下面代码手动复制。"}};
-document.getElementById("demo").onclick=()=>{if(window.__JW_STICKERS_V01__){document.getElementById("demo").textContent="脚本已在运行";return}document.getElementById("demo").textContent="测试中…";/* bookmarklet.js already executes on page load; this will show status */};
+document.getElementById("demo").onclick=()=>{if(window.__JW_STICKERS_V01__){document.getElementById("demo").textContent="脚本已在运行";return}const script=document.createElement("script");script.src="./bookmarklet.js";script.onload=()=>{document.getElementById("demo").textContent="测试已启动（看上方模拟消息）"};script.onerror=()=>{document.getElementById("demo").textContent="脚本加载失败"};document.body.appendChild(script)};
 </script></main></body></html>
