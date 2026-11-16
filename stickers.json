@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "pack": "Jianwei Stickers Demo",
+  "stickers": [
+    {
+      "id": "JW_HAPPY",
+      "label": "开心（演示）",
+      "file": "stickers/jw_happy.png",
+      "description": "用于验证公开图片 URL 的演示缩略图"
+    }
+  ]
+}

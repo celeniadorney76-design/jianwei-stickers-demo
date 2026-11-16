@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1725">
+<title>Jianwei Stickers · 单图实验</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0b1725;color:#f0f6fc;font:16px/1.6 system-ui,-apple-system,sans-serif}
+main{max-width:580px;margin:auto;padding:32px 20px}h1{font-size:1.7rem;line-height:1.35}p{color:#c2cedb}
+.card{background:#182a3c;border:1px solid #365066;border-radius:20px;padding:28px;text-align:center}
+.card img{width:min(100%,230px);height:auto;border-radius:14px;image-rendering:auto}
+.id{color:#a1e7d5;font-weight:700}button{background:#35887a;border:0;border-radius:12px;padding:12px 18px;color:#fff;font-size:1rem;font-weight:600;cursor:pointer}
+.url{overflow-wrap:anywhere;font-size:.88rem;color:#a9cce0}.note{font-size:.88rem}
+</style>
+</head>
+<body><main>
+<h1>🐉 见微表情库 · 测试 0.1</h1>
+<p>单张演示表情，用来验证 GitHub Pages 图片地址是否能被 ChatGPT 安卓 App 调用并展示。这不是正式插件。</p>
+<div class="card"><img src="./stickers/jw_happy.png" alt="见微开心演示表情"><p class="id">JW_HAPPY</p></div>
+<h2>公开图片地址</h2>
+<p class="url" id="imgurl"></p>
+<button id="copy">复制图片直链</button>
+<p class="note">目前采用压缩缩略图用于技术测试。网页能显示图片，不代表 ChatGPT 已能主动把它作为表情发送。</p>
+<script>
+const imgUrl=new URL("./stickers/jw_happy.png", location.href).href;
+document.getElementById("imgurl").textContent=imgUrl;
+document.getElementById("copy").addEventListener("click",async()=>{
+ try{await navigator.clipboard.writeText(imgUrl);document.getElementById("copy").textContent="已复制";}
+ catch(e){document.getElementById("copy").textContent="复制失败，请长按地址";}
+});
+</script>
+</main></body></html>
