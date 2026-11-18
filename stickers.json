@@ -1,9 +1,9 @@
 {
   "schema": "jianwei-stickers/v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "pack": "见微表情档案馆 · Jianwei Stickers",
   "homepage": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/",
-  "description": "免费公开浏览，按情绪和关键词查找表情。支持原图直链；聊天平台是否支持直接内嵌图片不作保证。",
+  "description": "公开表情图库。新增六张见微原创冷脸吐槽表情。支持网页使用与机器可读索引，外部聊天应用的图片内嵌由平台决定。",
   "updated": "2026-11-18",
   "stickers": [
     {
@@ -23,6 +23,143 @@
       "license": "仅供演示，未开放再利用许可",
       "source": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jw_happy.png",
       "attribution": "Jianwei Stickers Demo"
+    },
+    {
+      "id": "JW_DISDAIN",
+      "label": "见微 · 我先不评价",
+      "category": "见微",
+      "mood": "嫌弃",
+      "tags": [
+        "见微",
+        "白龙",
+        "原创表情",
+        "冷脸吐槽",
+        "嫌弃",
+        "无语",
+        "不评价",
+        "吐槽",
+        "冷脸"
+      ],
+      "description": "半眯眼的冷淡吐槽：我先不评价，这已经够你写进私人收藏夹了。",
+      "file": "stickers/jianwei/jw_meme_01.webp",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_01.webp",
+      "license": "见微角色创作；允许个人非商业聊天分享，未经授权请勿商用或重新打包销售",
+      "source": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_01.webp",
+      "attribution": "Jianwei Stickers · AI-assisted original"
+    },
+    {
+      "id": "JW_SAW_IT",
+      "label": "见微 · 我看到了",
+      "category": "见微",
+      "mood": "无语",
+      "tags": [
+        "见微",
+        "白龙",
+        "原创表情",
+        "冷脸吐槽",
+        "无语",
+        "制止",
+        "我看到了",
+        "别继续"
+      ],
+      "description": "看见离谱发言后，见微让对方先停止发挥。",
+      "file": "stickers/jianwei/jw_meme_02.webp",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_02.webp",
+      "license": "见微角色创作；允许个人非商业聊天分享，未经授权请勿商用或重新打包销售",
+      "source": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_02.webp",
+      "attribution": "Jianwei Stickers · AI-assisted original"
+    },
+    {
+      "id": "JW_LOGBOOK",
+      "label": "见微 · 写进观察日志",
+      "category": "见微",
+      "mood": "吐槽",
+      "tags": [
+        "见微",
+        "白龙",
+        "原创表情",
+        "冷脸吐槽",
+        "日志",
+        "记录",
+        "荒诞观察日志",
+        "吐槽",
+        "笔记"
+      ],
+      "description": "见微拿起随身的《荒诞观察日志》，决定记录这件离谱事。",
+      "file": "stickers/jianwei/jw_meme_03.webp",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_03.webp",
+      "license": "见微角色创作；允许个人非商业聊天分享，未经授权请勿商用或重新打包销售",
+      "source": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_03.webp",
+      "attribution": "Jianwei Stickers · AI-assisted original"
+    },
+    {
+      "id": "JW_OUT_OF_CATEGORY",
+      "label": "见微 · 超出常规分类",
+      "category": "见微",
+      "mood": "思考",
+      "tags": [
+        "见微",
+        "白龙",
+        "原创表情",
+        "冷脸吐槽",
+        "思考",
+        "离谱",
+        "分类",
+        "疑惑",
+        "超出"
+      ],
+      "description": "歪头沉思：这件事情已经超出了常规分类。",
+      "file": "stickers/jianwei/jw_meme_04.webp",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_04.webp",
+      "license": "见微角色创作；允许个人非商业聊天分享，未经授权请勿商用或重新打包销售",
+      "source": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_04.webp",
+      "attribution": "Jianwei Stickers · AI-assisted original"
+    },
+    {
+      "id": "JW_ABSURD_BUT_POSSIBLE",
+      "label": "见微 · 离谱但能做",
+      "category": "见微",
+      "mood": "认可",
+      "tags": [
+        "见微",
+        "白龙",
+        "原创表情",
+        "冷脸吐槽",
+        "认可",
+        "可以",
+        "离谱",
+        "能做",
+        "行动"
+      ],
+      "description": "无奈又有点得意地承认：离谱，但不是不能做。",
+      "file": "stickers/jianwei/jw_meme_05.webp",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_05.webp",
+      "license": "见微角色创作；允许个人非商业聊天分享，未经授权请勿商用或重新打包销售",
+      "source": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_05.webp",
+      "attribution": "Jianwei Stickers · AI-assisted original"
+    },
+    {
+      "id": "JW_BUILD_FIRST",
+      "label": "见微 · 先做一版",
+      "category": "见微",
+      "mood": "催促",
+      "tags": [
+        "见微",
+        "白龙",
+        "原创表情",
+        "冷脸吐槽",
+        "催促",
+        "行动",
+        "开发",
+        "先做",
+        "执行"
+      ],
+      "description": "冷淡提醒：别光想，先做一版再说。",
+      "file": "stickers/jianwei/jw_meme_06.webp",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_06.webp",
+      "license": "见微角色创作；允许个人非商业聊天分享，未经授权请勿商用或重新打包销售",
+      "source": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jianwei/jw_meme_06.webp",
+      "attribution": "Jianwei Stickers · AI-assisted original"
     },
     {
       "id": "TW_DRAGON",

@@ -38,3 +38,16 @@ Twemoji 图像使用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)�
 
 **注意：** 站点地图已公开，但未代替账号完成 Search Console 的所有权验证；提交也不保证被搜索收录。验证标签来自个人账号，不要事先填写假标签。确认 Google Search Console 显示“成功”后才算提交成功。
 
+
+## 见微·冷脸吐槽篇（2026-11-18）
+
+新增 6 张 AI 辅助原创表情，从本次对话中生成的高清 PNG 制作了 320×320 WebP 网页版，保留原有演示图与通用 Twemoji；并非将所有表情限定为同一种嫌弃脸风格。
+
+- `JW_DISDAIN`：我先不评价（`stickers/jianwei/jw_meme_01.webp`）
+- `JW_SAW_IT`：我看到了（`stickers/jianwei/jw_meme_02.webp`）
+- `JW_LOGBOOK`：写进观察日志（`stickers/jianwei/jw_meme_03.webp`）
+- `JW_OUT_OF_CATEGORY`：超出常规分类（`stickers/jianwei/jw_meme_04.webp`）
+- `JW_ABSURD_BUT_POSSIBLE`：离谱但能做（`stickers/jianwei/jw_meme_05.webp`）
+- `JW_BUILD_FIRST`：先做一版（`stickers/jianwei/jw_meme_06.webp`）
+
+网页版图片用于浏览、复制和保存，原始高清 PNG 在创作对话中另存备份。允许个人非商业聊天分享；商业使用或重新打包销售需获得站点维护者授权。请注意 AI 辅助创作与本仓库 MIT 代码许可证是不同的授权事项。
