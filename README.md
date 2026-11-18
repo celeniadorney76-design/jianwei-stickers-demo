@@ -27,3 +27,14 @@ Twemoji 图像使用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)�
 - [PNG/GIF 直链加载测试](./media-test.html)
 
 本网站是纯静态资源展示，不修改 ChatGPT 安卓 App 或其他聊天软件。
+
+## Google Search Console 提交指引
+
+1. 访问 https://search.google.com/search-console/welcome ，登录自己的 Google 账号，选择右侧的 **网址前缀 (URL prefix)**。
+2. 填入完整网址 `https://celeniadorney76-design.github.io/jianwei-stickers-demo/`，包括路径末尾斜线。不要选择需要验证整个 `github.io` 域名的「网域」模式。
+3. 选择“HTML 标记”方式，获取专属于账号的 `<meta name="google-site-verification" content="...">`；将标签交给仓库维护者写入首页 `<head>`，并在 GitHub Pages 更新后点击「验证」。
+4. 验证成功后，在「站点地图」填写 `sitemap.xml` 并提交。
+5. 在「网址检查」输入主页完整网址；若未编入索引，可按官方流程测试实时网址和请求编入索引。
+
+**注意：** 站点地图已公开，但未代替账号完成 Search Console 的所有权验证；提交也不保证被搜索收录。验证标签来自个人账号，不要事先填写假标签。确认 Google Search Console 显示“成功”后才算提交成功。
+
