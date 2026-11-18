@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://celeniadorney76-design.github.io/jianwei-stickers-demo/sitemap.xml

@@ -1,12 +1,245 @@
 {
-  "version": "0.1.0",
-  "pack": "Jianwei Stickers Demo",
+  "schema": "jianwei-stickers/v1",
+  "version": "1.0.0",
+  "pack": "见微表情档案馆 · Jianwei Stickers",
+  "homepage": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/",
+  "description": "免费公开浏览，按情绪和关键词查找表情。支持原图直链；聊天平台是否支持直接内嵌图片不作保证。",
+  "updated": "2026-11-18",
   "stickers": [
     {
       "id": "JW_HAPPY",
-      "label": "开心（演示）",
+      "label": "见微 · 开心",
+      "category": "见微",
+      "mood": "开心",
+      "tags": [
+        "见微",
+        "白龙",
+        "开心",
+        "演示"
+      ],
+      "description": "早期见微公开演示缩略图；不是完整私人表情包。",
       "file": "stickers/jw_happy.png",
-      "description": "用于验证公开图片 URL 的演示缩略图"
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jw_happy.png",
+      "license": "仅供演示，未开放再利用许可",
+      "source": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jw_happy.png",
+      "attribution": "Jianwei Stickers Demo"
+    },
+    {
+      "id": "TW_DRAGON",
+      "label": "小龙围观",
+      "category": "通用",
+      "mood": "围观",
+      "tags": [
+        "龙",
+        "小龙",
+        "好奇",
+        "观察",
+        "dragon"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f409.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f409.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f409.svg",
+      "attribution": "Twemoji project contributors"
+    },
+    {
+      "id": "TW_WHALE",
+      "label": "小鲸鱼",
+      "category": "通用",
+      "mood": "围观",
+      "tags": [
+        "鲸鱼",
+        "大肥鱼",
+        "潜水",
+        "whale"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f433.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f433.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f433.svg",
+      "attribution": "Twemoji project contributors"
+    },
+    {
+      "id": "TW_SMILE",
+      "label": "笑眯眯",
+      "category": "通用",
+      "mood": "开心",
+      "tags": [
+        "微笑",
+        "好心情",
+        "友善",
+        "happy"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f60a.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f60a.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f60a.svg",
+      "attribution": "Twemoji project contributors"
+    },
+    {
+      "id": "TW_LOL",
+      "label": "笑哭了",
+      "category": "通用",
+      "mood": "开心",
+      "tags": [
+        "笑哭",
+        "哈哈",
+        "开心",
+        "laugh"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f602.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f602.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f602.svg",
+      "attribution": "Twemoji project contributors"
+    },
+    {
+      "id": "TW_THINK",
+      "label": "让我想想",
+      "category": "通用",
+      "mood": "思考",
+      "tags": [
+        "思考",
+        "疑问",
+        "犹豫",
+        "thinking"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f914.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f914.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f914.svg",
+      "attribution": "Twemoji project contributors"
+    },
+    {
+      "id": "TW_ANGRY",
+      "label": "气鼓鼓",
+      "category": "通用",
+      "mood": "生气",
+      "tags": [
+        "生气",
+        "愤怒",
+        "不服",
+        "angry"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f621.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f621.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f621.svg",
+      "attribution": "Twemoji project contributors"
+    },
+    {
+      "id": "TW_SLEEP",
+      "label": "先睡了",
+      "category": "通用",
+      "mood": "困倦",
+      "tags": [
+        "疲惫",
+        "睡觉",
+        "休息",
+        "sleepy"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f634.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f634.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f634.svg",
+      "attribution": "Twemoji project contributors"
+    },
+    {
+      "id": "TW_LIKE",
+      "label": "可以的",
+      "category": "通用",
+      "mood": "赞同",
+      "tags": [
+        "点赞",
+        "赞同",
+        "同意",
+        "支持"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f44d.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f44d.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f44d.svg",
+      "attribution": "Twemoji project contributors"
+    },
+    {
+      "id": "TW_LOOK",
+      "label": "吃瓜围观",
+      "category": "通用",
+      "mood": "围观",
+      "tags": [
+        "眼睛",
+        "围观",
+        "吃瓜",
+        "观察"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f440.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f440.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f440.svg",
+      "attribution": "Twemoji project contributors"
+    },
+    {
+      "id": "TW_CONFUSED",
+      "label": "没看懂",
+      "category": "通用",
+      "mood": "疑惑",
+      "tags": [
+        "不懂",
+        "疑惑",
+        "无语",
+        "问号"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f615.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f615.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f615.svg",
+      "attribution": "Twemoji project contributors"
+    },
+    {
+      "id": "TW_COOL",
+      "label": "稳得很",
+      "category": "通用",
+      "mood": "得意",
+      "tags": [
+        "墨镜",
+        "酷",
+        "自信",
+        "cool"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f60e.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f60e.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f60e.svg",
+      "attribution": "Twemoji project contributors"
+    },
+    {
+      "id": "TW_HELLO",
+      "label": "嗨嗨",
+      "category": "通用",
+      "mood": "问候",
+      "tags": [
+        "招呼",
+        "挥手",
+        "你好",
+        "hello"
+      ],
+      "description": "Twemoji 开源通用表情示例，不代表见微或 DeepSeek 的官方角色形象。",
+      "file": "stickers/twemoji/1f44b.svg",
+      "url": "https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/twemoji/1f44b.svg",
+      "license": "CC BY 4.0",
+      "source": "https://github.com/jdecked/twemoji/blob/main/assets/svg/1f44b.svg",
+      "attribution": "Twemoji project contributors"
     }
   ]
 }

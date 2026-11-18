@@ -1,20 +1,98 @@
-<!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1725"><title>Jianwei Stickers · 手机零安装实验</title>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c1523">
+<meta name="description" content="见微表情档案馆：无需安装的公开表情包图库。搜索、复制图片、保存原图、分享直链，以及供 AI 检索的 JSON 索引。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://celeniadorney76-design.github.io/jianwei-stickers-demo/">
+<meta property="og:type" content="website"><meta property="og:title" content="见微表情档案馆｜零安装公开表情图库">
+<meta property="og:description" content="按情绪找图，复制、下载、分享，AI 也能读取的表情目录。">
+<meta property="og:image" content="https://celeniadorney76-design.github.io/jianwei-stickers-demo/stickers/jw_happy.png">
+<title>见微表情档案馆 · Jianwei Stickers</title>
 <style>
-:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0b1725;color:#edf7fc;font:16px/1.6 system-ui,-apple-system,sans-serif}main{max-width:690px;margin:auto;padding:26px 18px 60px}h1{font-size:1.65rem;margin:0 0 14px}h2{font-size:1.2rem;margin-top:28px}p,li{color:#cbdce8}.card{background:#192f42;border:1px solid #3c586a;border-radius:18px;padding:22px;margin:16px 0}.demo{text-align:center}.demo img{width:140px;height:140px;object-fit:contain;background:#f4f6f8;border-radius:12px}button{font:600 1rem system-ui;border:0;border-radius:13px;padding:14px 18px;background:#31a89b;color:#062622;cursor:pointer;width:100%}button:active{opacity:.85}.quiet{font-size:.88rem;color:#b6cbd6}.tag{color:#7fddca}a{color:#9ad5fd}code{overflow-wrap:anywhere;color:#a5e5d7}.mock{border-radius:12px;background:#0e2030;padding:15px}.mock [data-message-author-role]{padding:0 4px}details{border-top:1px solid #3c586a;margin-top:16px;padding-top:12px}.copybox{font-size:11px;max-height:100px;overflow:auto;background:#06131d;border-radius:10px;padding:12px;overflow-wrap:anywhere;user-select:all}
-</style></head><body><main>
-<h1>🐉 Jianwei Stickers</h1>
-<p>手机端单张表情技术实验。<strong>无需额外 App 或 API Key</strong>，用浏览器的书签脚本在 ChatGPT 网页版把 <code>[JW_HAPPY]</code> 显示成图片。</p>
-<div class="card demo"><img src="./stickers/jw_happy.png" alt="见微开心演示表情"><p class="tag"><strong>JW_HAPPY</strong> · 演示图</p><p class="quiet">图片资源：公开演示缩略图；私人表情包不在仓库中。</p></div>
-<div class="card"><h2>先在本页测试渲染</h2><p>下面模拟一条助手消息，点按钮后应该出现图片。</p><div class="mock"><div data-message-author-role="assistant">测试成功！ [JW_HAPPY]</div></div><p></p><button id="demo">运行本页表情脚本</button></div>
-<h2>在 Android Chrome 上使用</h2>
-<ol><li>点下方按钮，复制书签代码。</li><li>在 Chrome 中将<strong>本页添加到书签</strong>，然后打开书签管理并<strong>编辑书签</strong>：名称改为「见微表情」，网址替换成刚复制的整段代码，保存。</li><li>在 <a href="https://chatgpt.com/">chatgpt.com</a> 网页登录你的 Plus 账号。</li><li>点<strong>地址栏</strong>，输入「见微表情」，<strong>点击带书签图标的联想项</strong>（不要直接按搜索键）。</li><li>如果右下角出现“见微表情测试已启动”，让助手输出 <code>[JW_HAPPY]</code> 做实验。</li></ol>
-<div class="card"><button id="copy">复制书签脚本</button><p class="quiet" id="status">这是书签脚本，并不是安装浏览器扩展。刷新 ChatGPT 页面后可能需要重新运行。</p><details><summary>复制失败？展开这里长按复制</summary><div class="copybox" id="code">加载中…</div></details></div>
-<h2>本实验的边界</h2><p>只修改当前浏览器看到的助手回复，不修改 ChatGPT 服务器保存的文字。脚本只查找助手消息中的 <code>[JW_HAPPY]</code>；不会把对话发到我们的服务器。浏览器加载图片时会向 GitHub Pages 请求公开演示图。</p><p class="quiet">这是 Chrome Android 书签脚本可行性实验；不同手机浏览器和 ChatGPT 页面版本可能不兼容。不能直接在 ChatGPT 官方 Android App 中执行。</p>
-
+:root{color-scheme:dark;--bg:#0b1422;--panel:#122337;--line:#2b4758;--text:#eaf6f7;--muted:#a2b8c7;--accent:#83e5ce}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font:15px/1.55 system-ui,-apple-system,"Noto Sans SC",sans-serif;background:radial-gradient(ellipse at 90% -12%,#23515a,transparent 40%),var(--bg)}
+a{color:#a5e6dc}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+main,footer,.top{max-width:1080px;margin:auto;padding-left:18px;padding-right:18px}
+header{border-bottom:1px solid #2a4755}.top{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;gap:10px}
+.logo{font-weight:750;font-size:16px}nav{display:flex;gap:17px;font-size:13px}nav a{text-decoration:none}
+.hero{padding:48px 0 25px;display:grid;grid-template-columns:1fr 140px;align-items:center;gap:14px}
+.eyebrow{font-size:11px;color:#a6e9dc;letter-spacing:.14em;border:1px solid #3b7b77;display:inline-block;border-radius:999px;padding:4px 11px}
+h1{font-size:clamp(32px,5.6vw,54px);letter-spacing:-.04em;line-height:1.16;margin:14px 0}
+h1 span{color:var(--accent)}.hero p{color:#bed2dc;max-width:680px;line-height:1.9;margin:0}
+.emblem{font-size:69px;display:grid;place-items:center;aspect-ratio:1;border:1px solid #376a70;background:linear-gradient(145deg,#224d51,#182940);border-radius:36px;transform:rotate(6deg)}
+.quick{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.btn{background:#1e3546;border:1px solid #426578;border-radius:10px;color:var(--text);padding:10px 13px;text-decoration:none;font-weight:650}.btn.primary{background:var(--accent);color:#092c2d;border-color:var(--accent)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0 28px}.feature{border:1px solid var(--line);border-radius:14px;background:#152538;padding:13px 16px}.feature strong{font-size:14px}.feature p{font-size:12px;color:var(--muted);margin:3px 0 0}
+.tool{background:#101e2f;border:1px solid var(--line);padding:17px;border-radius:17px;margin-bottom:16px}.toolhead{display:flex;justify-content:space-between;gap:10px;align-items:center}.tool h2{font-size:22px;margin:0}.count{font-size:12px;color:var(--muted)}
+#search{width:100%;margin:14px 0;background:#091827;color:var(--text);border:1px solid #3b5a6b;padding:13px 15px;border-radius:11px;outline:0}#search:focus{border-color:var(--accent)}
+.filters,.moods{display:flex;flex-wrap:wrap;gap:7px}.filters{margin-bottom:12px}
+.filter{background:#1b3247;color:#d5e8e9;border:1px solid #36556b;border-radius:999px;padding:7px 12px;font-size:12px}.filter[aria-pressed="true"]{color:#f6fffd;background:#19625d;border-color:var(--accent)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(208px,1fr));gap:13px;min-height:100px}
+.card{display:flex;flex-direction:column;background:linear-gradient(145deg,#172c40,#101e2f);border:1px solid var(--line);border-radius:16px;padding:11px;min-width:0}.card:hover{border-color:#62b9b0}
+.visual{height:163px;display:grid;place-items:center;border-radius:11px;background:radial-gradient(circle,#325258,#14283b 70%)}.visual a{display:grid;place-items:center;width:100%;height:100%}.visual img{height:123px;width:123px;object-fit:contain;filter:drop-shadow(0 8px 13px #0005)}
+.titlebar{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin:10px 1px 5px}.titlebar strong{font-size:14px}.mood{font-size:11px;color:var(--accent)}
+.caption{font-size:12px;min-height:52px;color:var(--muted);margin:0 1px 8px}.actions{display:flex;gap:5px;margin-top:auto;flex-wrap:wrap}.actions>*{flex:1;background:#203b50;color:#e5f5f4;border:1px solid #3b6071;border-radius:8px;padding:7px 5px;text-decoration:none;text-align:center;font-size:12px;white-space:nowrap}.actions .copy-image{background:#22675f;border-color:#2a8678}
+.license{font-size:11px;color:#96afbd;margin-top:10px}.empty{grid-column:1/-1;text-align:center;color:var(--muted);border:1px dashed #496375;border-radius:14px;padding:33px 10px}
+.guide{border:1px solid var(--line);border-radius:17px;padding:22px;background:#111f31;margin-top:30px}.guide h2{margin:0 0 8px;font-size:21px}.guide p{color:#b8cdd6;line-height:1.8}.guide code{color:var(--accent);overflow-wrap:anywhere}.guide details{margin-top:12px;padding-top:12px;border-top:1px solid #2e4e5d}.guide summary{cursor:pointer}
+footer{padding-top:30px;padding-bottom:42px;font-size:12px;line-height:1.9;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:24px;max-width:calc(100vw - 30px);transform:translate(-50%,12px);background:#d3f8e8;color:#0d3032;border-radius:11px;padding:10px 17px;box-shadow:0 8px 26px #0006;opacity:0;pointer-events:none;transition:.2s;text-align:center;z-index:9}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:650px){.hero{display:block;padding:33px 0 24px}.emblem{display:none}.features{grid-template-columns:1fr;gap:7px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.card{padding:9px}.visual{height:139px}.visual img{height:106px;width:106px}.caption{min-height:60px}.actions>*{padding:7px 4px;font-size:11px}.tool{padding:12px}.top{padding:12px}.logo{font-size:14px}nav{gap:8px;font-size:12px}main,footer{padding-left:12px;padding-right:12px}}
+@media(max-width:350px){.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body><header><div class="top"><div class="logo">🐉 见微表情档案馆</div><nav><a href="#collection">图库</a><a href="#ai">AI 找图</a><a href="https://github.com/celeniadorney76-design/jianwei-stickers-demo" target="_blank" rel="noopener">GitHub</a></nav></div></header>
+<main>
+<section class="hero"><div><div class="eyebrow">PUBLIC · NO INSTALL</div><h1>好表情，<span>随手就用。</span></h1><p>开放的小小表情档案馆。手机、电脑打开就能搜索、复制、保存和分享。无需注册或安装，也留了一份让 AI 更容易读懂的索引。</p><div class="quick"><a class="btn primary" href="#collection">开始找表情</a><button class="btn" id="share">复制站点链接</button><button class="btn" id="prompt">复制 AI 找图指令</button></div></div><div class="emblem" aria-hidden="true">🐉</div></section>
+<section class="features"><div class="feature"><strong>✨ 零安装</strong><p>网页打开即可用，图片原图可保存。</p></div><div class="feature"><strong>🔎 情绪检索</strong><p>按角色、情绪、关键词筛选。</p></div><div class="feature"><strong>🤖 AI 索引</strong><p>每张图都有 ID、标签与原始直链。</p></div></section>
+<section id="collection"><div class="tool"><div class="toolhead"><h2>表情收藏</h2><div class="count" id="count">正在加载索引…</div></div><input id="search" type="search" autocomplete="off" placeholder="搜索：白龙、开心、思考、鲸鱼、吃瓜…" aria-label="搜索表情">
+<div class="filters" role="group" aria-label="来源分类"><button class="filter" data-cat="全部" aria-pressed="true">全部</button><button class="filter" data-cat="见微" aria-pressed="false">见微演示</button><button class="filter" data-cat="通用" aria-pressed="false">开放素材</button></div><div class="moods" id="moods" role="group" aria-label="情绪标签"></div></div>
+<div class="gallery" id="gallery" aria-live="polite"><div class="empty">正在加载表情…</div></div></section>
+<section class="guide" id="ai"><h2>🤖 让 AI 从仓库里挑图</h2><p>把网页或 <a href="./stickers.json" target="_blank" rel="noopener">stickers.json 索引</a> 给支持浏览网页的 AI，让它根据 <code>mood / tags / label</code> 找表情，并读取对应的 <code>url</code> 原图直链，不用依赖搜索排名。</p>
+<p>例如：「打开这个表情库的 stickers.json，挑一张适合现在聊天气氛的图片，优先直接展示；如果无法嵌入图片，就给我可点击的原图链接。」</p>
+<details><summary>为什么有了图片直链，也未必能直接在聊天中显示？</summary><p>表情存储和聊天 App 的图片显示规则是两件事。本站能提供公开原图地址，但不能控制 ChatGPT、微信、QQ 等是否原生显示。手机浏览器的“复制图片”兼容性也不同，失败时会尝试改为复制链接。</p></details>
+<details><summary>版权、投稿与旧实验</summary><p>通用素材来自 Twemoji，图片遵循 CC BY 4.0，使用时请适当署名；见微演示图没有开放再利用许可。欢迎通过 <a href="https://github.com/celeniadorney76-design/jianwei-stickers-demo/issues/new" target="_blank" rel="noopener">GitHub Issue</a> 提建议。旧的 <a href="./legacy-bookmarklet.html">书签脚本实验</a> 和 <a href="./media-test.html">图片测试页</a> 仍然保留。</p></details></section>
+</main>
+<footer>Jianwei Stickers · 静态网页，无需注册、无需部署、无账号数据存储。<br>Twemoji graphics © Twemoji contributors · <a href="https://github.com/jdecked/twemoji" target="_blank" rel="noopener">项目来源</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>。原有 MIT 许可证仅适用于站点代码，不自动涵盖图片。<br><a href="./ATTRIBUTION.md">素材署名</a> · <a href="./stickers.json">机器可读索引</a></footer>
+<div class="toast" id="toast" role="status"></div>
 <script>
-let bookmarklet="";
-fetch("./bookmarklet.txt").then(r=>r.text()).then(t=>{bookmarklet=t.trim();document.getElementById("code").textContent=bookmarklet}).catch(()=>document.getElementById("code").textContent="获取失败");
-document.getElementById("copy").onclick=async()=>{try{await navigator.clipboard.writeText(bookmarklet);document.getElementById("status").textContent="已复制！请编辑 Chrome 书签的网址。"}catch(e){document.getElementById("status").textContent="无法自动复制，展开下面代码手动复制。"}};
-document.getElementById("demo").onclick=()=>{if(window.__JW_STICKERS_V01__){document.getElementById("demo").textContent="脚本已在运行";return}const script=document.createElement("script");script.src="./bookmarklet.js";script.onload=()=>{document.getElementById("demo").textContent="测试已启动（看上方模拟消息）"};script.onerror=()=>{document.getElementById("demo").textContent="脚本加载失败"};document.body.appendChild(script)};
-</script></main></body></html>
+(function(){
+"use strict";
+var items=[],category="全部",mood="全部",term="",toastTimer;
+var gallery=document.getElementById("gallery"),moods=document.getElementById("moods"),counter=document.getElementById("count"),search=document.getElementById("search"),toastBox=document.getElementById("toast");
+var site="https://celeniadorney76-design.github.io/jianwei-stickers-demo/";
+function elt(tag,cls,text){var x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=text;return x}
+function toast(msg){toastBox.textContent=msg;toastBox.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(function(){toastBox.classList.remove("show")},2300)}
+function copyText(text){if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(text).then(function(){return true}).catch(function(){window.prompt("请复制：",text);return false})}window.prompt("请复制：",text);return Promise.resolve(false)}
+function show(){
+var result=items.filter(function(s){return (category==="全部"||s.category===category)&&(mood==="全部"||s.mood===mood||s.tags.includes(mood))&&[s.id,s.label,s.description,s.category,s.mood].concat(s.tags).join(" ").toLowerCase().includes(term)});
+counter.textContent="共 "+items.length+" 张 · 当前 "+result.length+" 张";
+gallery.replaceChildren();
+if(!result.length){gallery.appendChild(elt("div","empty","没有找到，试试别的关键词。"));return}
+result.forEach(function(s){
+var card=elt("article","card"),visual=elt("div","visual"),a=document.createElement("a"),img=new Image();
+a.href=s.url;a.target="_blank";a.rel="noopener";a.title="打开原图："+s.label;img.src=s.url;img.alt=s.label;img.loading="lazy";a.appendChild(img);visual.appendChild(a);card.appendChild(visual);
+var bar=elt("div","titlebar");bar.appendChild(elt("strong","",s.label));bar.appendChild(elt("span","mood",s.mood));card.appendChild(bar);card.appendChild(elt("p","caption",s.description));
+var actions=elt("div","actions"),btnImg=elt("button","copy-image","复制图片"),btnLink=elt("button","","复制直链"),save=elt("a","","保存原图");
+btnImg.type="button";btnImg.onclick=function(){copyImage(s)};btnLink.type="button";btnLink.onclick=function(){copyText(s.url).then(function(ok){if(ok)toast("图片直链已复制")})};save.href=s.url;save.download=s.file.split("/").pop();save.rel="noopener";
+actions.append(btnImg,btnLink,save);card.appendChild(actions);card.appendChild(elt("div","license",s.license));gallery.appendChild(card)
+})
+}
+function copyImage(s){
+if(!window.ClipboardItem||!navigator.clipboard||!navigator.clipboard.write){copyText(s.url).then(function(ok){toast(ok?"浏览器不支持复制图片，已复制链接":"请打开原图保存")});return}
+var image=new Image();image.crossOrigin="anonymous";image.onload=function(){
+try{var canvas=document.createElement("canvas");canvas.width=512;canvas.height=512;canvas.getContext("2d").drawImage(image,0,0,512,512);
+var blob=new Promise(function(resolve,reject){canvas.toBlob(function(b){b?resolve(b):reject(new Error("PNG"))},"image/png")});
+navigator.clipboard.write([new ClipboardItem({"image/png":blob})]).then(function(){toast("图片已复制，试着粘贴到聊天框")}).catch(function(){copyText(s.url).then(function(ok){toast(ok?"设备不支持直接复制，已复制链接":"请打开原图保存")})})
+}catch(e){copyText(s.url).then(function(ok){toast(ok?"已复制链接":"请打开原图保存")})}
+};image.onerror=function(){toast("加载失败，请打开原图尝试保存")};image.src=s.url
+}
+function tags(){moods.replaceChildren();["全部","开心","围观","思考","生气","困倦","赞同","疑惑","得意","问候"].forEach(function(m){var b=elt("button","filter",m);b.setAttribute("aria-pressed",String(mood===m));b.type="button";b.onclick=function(){mood=m;tags();show()};moods.appendChild(b)})}
+document.querySelectorAll("[data-cat]").forEach(function(b){b.onclick=function(){category=b.dataset.cat;document.querySelectorAll("[data-cat]").forEach(function(x){x.setAttribute("aria-pressed",String(x===b))});show()}});
+search.oninput=function(){term=search.value.toLowerCase().trim();show()};
+document.getElementById("share").onclick=function(){copyText(site).then(function(ok){if(ok)toast("本站链接已复制")})};
+document.getElementById("prompt").onclick=function(){var p="请读取公开表情包索引："+site+"stickers.json ，按照当前聊天的语气，从 stickers 中挑选最适合的一张；如果聊天平台支持内嵌图片，请使用记录中的 url 展示，否则提供可以点击的原图链接。不要编造图片和链接，注意许可。";copyText(p).then(function(ok){if(ok)toast("AI 找图指令已复制")})};
+var params=new URLSearchParams(location.search);if(params.has("q")){term=params.get("q").toLowerCase().trim();search.value=params.get("q")}
+tags();fetch("./stickers.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw Error("读取失败");return r.json()}).then(function(j){items=Array.isArray(j.stickers)?j.stickers:[];show()}).catch(function(){counter.textContent="索引读取失败";gallery.replaceChildren();var x=elt("div","empty","读取失败，请刷新或打开 JSON 索引。");var link=elt("a","","打开索引");link.href="./stickers.json";x.appendChild(document.createElement("br"));x.appendChild(link);gallery.appendChild(x)});
+})();
+</script></body></html>
