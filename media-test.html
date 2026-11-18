@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1725">
+<title>见微表情 · PNG/GIF 直链测试</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 system-ui,-apple-system,sans-serif;color:#e7f4f7;background:#0b1725}
+main{max-width:760px;margin:0 auto;padding:24px 16px 54px}
+h1{font-size:1.6rem;margin:0 0 8px}
+p{color:#b5ccda}
+h2{font-size:1.05rem;margin:0 0 8px}
+a{color:#9addf4}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px}
+.card{border:1px solid #3b6073;background:#172c3f;border-radius:16px;padding:18px}
+.preview{min-height:162px;display:flex;align-items:center;justify-content:center;background:#081724;border-radius:12px;margin:12px 0}
+.preview img{display:block;width:128px;height:128px;object-fit:contain;image-rendering:auto}
+.status{font-size:.86rem;color:#f5cd82}
+.status.ok{color:#78d5c4}.status.fail{color:#f5a7a7}
+.note{border-left:3px solid #64c8b8;padding:0 12px}
+code{color:#99decf;overflow-wrap:anywhere}
+small{color:#99b4c5}
+footer{margin-top:22px;color:#adc7d7}
+</style>
+</head>
+<body><main>
+<h1>🐉 PNG / GIF 加载对照实验</h1>
+<p>同一份 GitHub 仓库资源，分别通过 GitHub Pages 与 GitHub 原始文件直链加载。检查安卓浏览器是否能显示 PNG，以及 GIF 中三个亮点是否轮流闪烁。</p>
+<div class="cards">
+<section class="card"><h2>① PNG · GitHub Pages</h2>
+<div class="preview"><img data-check="png-pages" src="./stickers/jw_happy.png" alt="见微 PNG 演示图"></div>
+<div class="status" id="status-png-pages">正在加载…</div>
+<p><a href="./stickers/jw_happy.png" target="_blank" rel="noopener">单独打开 PNG</a></p></section>
+<section class="card"><h2>② GIF · GitHub Pages</h2>
+<div class="preview"><img data-check="gif-pages" src="./stickers/jw_animation_test.gif" alt="三个绿点轮流亮起的 GIF 演示"></div>
+<div class="status" id="status-gif-pages">正在加载…</div>
+<p><a href="./stickers/jw_animation_test.gif" target="_blank" rel="noopener">单独打开 GIF</a></p></section>
+<section class="card"><h2>③ PNG · GitHub Raw</h2>
+<div class="preview"><img data-check="png-raw" src="https://raw.githubusercontent.com/celeniadorney76-design/jianwei-stickers-demo/main/stickers/jw_happy.png" alt="见微 PNG Raw 直链"></div>
+<div class="status" id="status-png-raw">正在加载…</div>
+<p><a href="https://raw.githubusercontent.com/celeniadorney76-design/jianwei-stickers-demo/main/stickers/jw_happy.png" target="_blank" rel="noopener">单独打开 Raw PNG</a></p></section>
+<section class="card"><h2>④ GIF · GitHub Raw</h2>
+<div class="preview"><img data-check="gif-raw" src="https://raw.githubusercontent.com/celeniadorney76-design/jianwei-stickers-demo/main/stickers/jw_animation_test.gif" alt="轮流闪烁的 GIF Raw 直链"></div>
+<div class="status" id="status-gif-raw">正在加载…</div>
+<p><a href="https://raw.githubusercontent.com/celeniadorney76-design/jianwei-stickers-demo/main/stickers/jw_animation_test.gif" target="_blank" rel="noopener">单独打开 Raw GIF</a></p></section>
+</div>
+<p class="note"><strong>怎么看：</strong> “已加载”只能证明浏览器拿到了图片文件，不代表 GIF 确实播放。观察三颗亮点是否轮流变亮，才能确认动画有效。这里成功不等于 ChatGPT 官方安卓 App 可以原生插入外部表情。</p>
+<p><small>GIF 是专为加载测试制作的简单占位动画，不是正式的见微或 DeepSeek 角色表情包。</small></p>
+<footer><a href="./">← 返回原书签脚本实验</a></footer>
+<script>
+document.querySelectorAll("img[data-check]").forEach(img=>{
+ const el=document.getElementById("status-"+img.dataset.check);
+ const ok=()=>{el.textContent="✓ 图片已加载（动画请肉眼确认）";el.className="status ok"};
+ const fail=()=>{el.textContent="✕ 图片加载失败";el.className="status fail"};
+ img.addEventListener("load",ok);img.addEventListener("error",fail);
+ if(img.complete){if(img.naturalWidth)ok();else fail()}
+});
+</script></main></body></html>
